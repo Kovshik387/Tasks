@@ -78,8 +78,7 @@ public class Task22 {
         boolean ruleCol = false;
 
         for (int ik = 0;ik < arr.length ;ik++){             //Вертикаль
-            if (arr[i][j] < arr[ik][j]) ruleCol = true;
-            else ruleCol = false;
+            ruleCol = arr[i][j] < arr[ik][j];
         }
 
         for (int jk =0;jk < arr[i].length;jk++){           // Горизонталь
