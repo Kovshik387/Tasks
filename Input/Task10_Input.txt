@@ -1,0 +1,5 @@
+Sumsung 2 1 8000
+Sumsung 16 8 8000
+Asus 4 3 3000
+Sumsung 8 5 6700
+Honor 3 4 2000

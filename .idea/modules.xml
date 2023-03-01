@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaFXTask/JavaFXTask.iml" filepath="$PROJECT_DIR$/JavaFXTask/JavaFXTask.iml" />
       <module fileurl="file://$PROJECT_DIR$/TasksJava.iml" filepath="$PROJECT_DIR$/TasksJava.iml" />
     </modules>
   </component>
