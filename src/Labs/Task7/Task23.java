@@ -8,7 +8,7 @@ public class Task23 {
 
     public String transliteration(String original){
 
-        StringBuilder result = new StringBuilder("");
+        StringBuilder result = new StringBuilder();
 
         Map<Character,String> dictionary = new HashMap<Character, String>(){{
             put('а',"a"); put('б',"b"); put('в',"v");put('г',"g"); put('д',"d");put('е',"e");
@@ -22,8 +22,8 @@ public class Task23 {
         var words = original.split(" ");
 
         for (String word : words) {
-            StringBuilder subString = new StringBuilder("");
-            StringBuilder point = new StringBuilder("");
+            StringBuilder subString = new StringBuilder();
+            StringBuilder point = new StringBuilder();
             for (int j = 0; j < word.length(); j++) {
                 if (word.charAt(word.length()-1) == '.') point.append(j);
                 if (dictionary.containsKey(Character.toLowerCase(word.charAt(j)))){

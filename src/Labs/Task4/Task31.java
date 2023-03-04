@@ -2,6 +2,8 @@ package Labs.Task4;
 
 import Labs.Utility.FileStream;
 
+import java.io.File;
+
 
 public class Task31 {
 
@@ -39,14 +41,16 @@ public class Task31 {
 
         FileStream fileStream;
 
-        int[][] two = new FileStream().<Integer>readArray("C:\\Users\\Yrulewet\\IdeaProjects\\TasksJava\\Input\\Input.txt")
-                .stream().map(e -> e.stream().mapToInt(Integer::intValue).toArray()).toArray(int[][]::new);
+        int[][] two = new FileStream().convertToInt(FileStream.readArray("C:\\Users\\Yrulewet\\IdeaProjects\\TasksJava\\Input\\Input.txt"));
+/*                new FileStream().<Integer>readArray("C:\\Users\\Yrulewet\\IdeaProjects\\TasksJava\\Input\\Input.txt")
+                .stream().map(e -> e.stream().mapToInt(Integer::intValue).toArray()).toArray(int[][]::new);*/
 
         task31.sortArray(two);
 
+        StringBuilder str = new StringBuilder();
         for (var item : test) {
             for (var item1 : item) {
-                System.out.print(item1+" ");
+                System.out.print(item1 + " ");
             }
             System.out.println();
         }

@@ -27,21 +27,26 @@ public class TableUtil {
         });
     }
 
-    public static List<Tablet> buyTablets(List<Tablet> tabletList,int k,int m, int r) throws Exception{
+    public static List<Tablet> buyTablets(List<Tablet> tabletList,int k,int m, int r) {
 
         List<Tablet> tablets = new ArrayList<Tablet>();
 
-        if (k > tabletList.size()) throw new Exception("Отсутсвие товара");
+        try {
+            if (k > tabletList.size()) throw new Exception("Отсутсвие товара");
 
-        for (int i = 0; i < k;i++) if (tabletList.get(i).isGood(m,r)) tablets.add(tabletList.get(i));
+            for (int i = 0; i < k;i++) if (tabletList.get(i).isGood(m,r)) tablets.add(tabletList.get(i));
+        }
+        catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
 
         return tablets;
     }
 
-    public static List<Tablet> getTabletList(){
+    public static List<Tablet> getTabletList(String path){
         List<Tablet> tabletList = new ArrayList<Tablet>();
 
-        var temp = new FileStream().<String>readArray("Input//Task10_Input.txt");
+        var temp = new FileStream().<String>readArray(path);
 
         try {
             for (var item : temp) {

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Task22 {
 
-    public static List<Integer> createNewList(ArrayList<Integer> list){
+    public static List<Integer> createNewList(List<Integer> list){
         List<List<Integer>> result = new ArrayList<>();
 
         int position = -1;

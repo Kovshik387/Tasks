@@ -1,13 +1,11 @@
 package Labs.Task6;
 
-
-
 import static Labs.Task6.TableUtil.*;
 
 public class Task22 {
     public static void main(String[] args) throws Exception {
 
-        var tabletList = getTabletList();
+        var tabletList = getTabletList("C:\\Users\\Yrulewet\\IdeaProjects\\TasksJava\\Input\\Task6\\Input1.txt");
 
         sortTable(tabletList);
 

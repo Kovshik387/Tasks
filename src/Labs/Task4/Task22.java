@@ -1,5 +1,12 @@
 package Labs.Task4;
 
+import Labs.Utility.FileStream;
+
+import java.util.Arrays;
+
+import static Labs.Utility.FileStream.convertToInt;
+import static Labs.Utility.FileStream.readArray;
+
 public class Task22 {
 
     public int[][] findSaddle(int[][] arr){
@@ -99,13 +106,17 @@ public class Task22 {
 
         Task22 task22 = new Task22();
 
-        var result = task22.findSaddle(test);
+        var test2 = convertToInt(readArray("Input//Input.txt"));
+
+        var result = task22.findSaddle(test2);
+
+        StringBuilder str = new StringBuilder();
 
         for (var item : result) {
             for (var item1 : item) {
-                System.out.print(item1+" ");
+                str.append(item).append(" ");
             }
-            System.out.println();
+            str.append('\n');
         }
 
     }

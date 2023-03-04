@@ -1,6 +1,15 @@
 package Labs.Task3;
 
+import Labs.Utility.FileStream;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static Labs.Utility.FileStream.writeArray;
 
 public class Task {
 
@@ -47,14 +56,16 @@ public class Task {
         return index;
     }
 
-    public static void printArray(Data pos,int[] arr) {
+    public static String printArray(Data pos,int[] arr) {
+        String result = "";
         for (int i = pos.position;i <= pos.count;i++){
-            System.out.print(arr[i] + " ");
+            result+= arr[i] + " ";
         }
+        return result;
     }
 
     record Data(int position,int count){}
-        public static void main(String[] args) {
+        public static void main(String[] args) throws FileNotFoundException {
 
             int[] test = new int[] {5, 1, 3, 1, 3, 5, 1, 5, 3, 7, 8, 8, 9, 8, 8, 5, 1};
 
@@ -62,15 +73,24 @@ public class Task {
 
             int[] test3 = new int[] {4, 5, 3, 3, 7, 3, 3, 7, 6, 4, 6, 7, 7, 7, 7, 1};
 
+            List<Integer> list = new ArrayList<>(Arrays.asList(3,4,5));
+
 /*            for (var item : new Task().findSymitry(test)){
                 System.out.println(item);
             }*/
 
-            printArray(new Task().findSymitry(test3),test3);
+            List<Integer> one = new FileStream().<String>readArray("Input//Task3//Input1.txt").get(0).stream().map(Integer::parseInt).collect(Collectors.toList());
+            int[] arr = one.stream().mapToInt(Integer::intValue).toArray();
+
+            String str = printArray(new Task().findSymitry(test3),test3);
+
+            writeArray(str,"C://Users//Yrulewet//Desktop//testt//input.txt");
+
+            System.out.println(str);
+
+
 
             //System.out.println(new Task().findSymitry(test).get(sortArray(new Task().findSymitry(test))));
-
         }
-
 
 }
