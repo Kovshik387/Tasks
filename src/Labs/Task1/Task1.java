@@ -1,4 +1,4 @@
-package Labs;
+package Labs.Task1;
 
 import java.util.Scanner;
 
@@ -44,10 +44,33 @@ public class Task1 {
         } else System.out.println("Введены неверные параметры");
     }
 
+    public void printFigure2(int h){
+        for (int i = 0; i < h;i++){
+            if (i == 0) {System.out.println("*"); continue; }
+
+            for (int j = 0; j <= i;j++){
+                if (i == h - 1) {
+                    if (j == i || j == 0) System.out.print("*");
+                    else System.out.print("_");
+                    continue;
+                }
+
+                if (j == 0) System.out.print("|");
+
+                if (j == i -1) System.out.print("\\");
+
+                System.out.print(" ");
+            }
+            System.out.println("");
+
+        }
+    }
+
     public static void main(String[] args) {
         Task1 task1 = new Task1();
 
-        task1.printFigure(new Scanner(System.in).nextInt());
+        task1.printFigure(10);
+        task1.printFigure2(10);
     }
 }
 

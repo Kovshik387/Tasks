@@ -30,7 +30,6 @@ public class FileStream {
 
             scanner.close();
 
-
             return data;
         }
         catch (IOException ex){
@@ -51,9 +50,7 @@ public class FileStream {
         }
 
         return temp.stream().map(l -> l.stream().mapToInt(Integer::intValue).toArray()).toArray(int[][]::new);
-
     }
-
     public static <TData> void writeArray2D(List<List<TData>> arr,String path) throws FileNotFoundException {
 
         try {
@@ -80,7 +77,6 @@ public class FileStream {
         printWriter.print(arr);
 
         printWriter.close();
-
     }
 
     public static List<Integer> convertToList (int[] arr){
